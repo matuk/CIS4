@@ -5,4 +5,7 @@ class DocumentationController < ApplicationController
   def contact
   end
 
+  def about
+  end
+
 end
