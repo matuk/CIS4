@@ -1,4 +1,8 @@
 Cis4::Application.routes.draw do
+  get "documentation/home"
+
+  get "documentation/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
