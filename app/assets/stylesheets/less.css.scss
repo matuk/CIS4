@@ -1,0 +1,186 @@
+/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://opensource.org/licenses/mit-license.php	*/
+
+
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 68px;
+	line-height: 72px;
+	letter-spacing: -1px;
+}
+
+.large, h2 {
+	font-size: 42px;
+	line-height: 48px;
+}
+
+.bigger, h3 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	font-size: 22px;
+	line-height: 30px;
+}
+
+body {
+	font: 16px/24px Georgia, serif;
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+/* Selection colours (easy to forget) */
+
+::selection 	 	{background: rgb(255,255,158);}
+::-moz-selection 	{background: rgb(255,255,158);}
+img::selection 		{background: transparent;}
+img::-moz-selection	{background: transparent;}
+body {-webkit-tap-highlight-color: rgb(255,255,158);}
+
+
+
+/*		Default Layout: 992px. 
+		Columns: 10 (68px)
+		Gutters: 24px.
+		Outer margins: 48px (=body-padding)
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+body {
+	width: 896px;
+	padding: 72px 48px 84px;
+        margin: auto;
+	background: rgb(232,232,232);
+	color: rgb(60,60,60);
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+article > div {
+  float: left;
+  width: 480px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: #FFF;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+article > aside {
+  float: right;
+  width: 344px;
+}
+
+article > aside img {
+  width: 334px;
+  padding: 4px; 
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);
+  -moz-box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);
+}
+
+article > footer {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-bottom: 24px;    
+}
+
+article > header > h1 {
+    font-size: 42px;
+    line-height: 48px;
+}
+
+h2, aside > header > h1 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+section, aside, div {
+    margin-top: 24px;
+}
+
+ul {
+    list-style-type: square;
+    list-style-position: outside;
+    margin: 24px 0 0 16px;
+}
+
+p {
+    margin: 24px 0 0 0;
+}
+
+section > p:first-child, div > p:first-child {
+    margin: 0;
+}
+
+
+
+/*		T60 Layout: 1360px.
+		Gutters: 24px.
+		Outer margins: 48px.
+		Inherits styles from: Default Layout.
+                Space left for scrollbar @1400: 40px
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+
+@media only screen and (min-width: 1350px) {
+	body {
+		padding: 96px 48px 0;
+		width: 1264px;
+		position: relative;
+	}
+	article > div {
+		width: 940px;
+		margin-bottom: 24px;
+	}
+	article > aside {
+		width: 252px;
+	}
+	article > aside img {
+		width: 242px;
+	}
+}
+

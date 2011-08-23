@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Medical Documentation App</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Medical Documentation App" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <article id="app_container">
+      <header id="app_header">
+        <section id="current_patient">
+          <p>Current Patient</p>
+        </section>
+        <section id="logo">
+          <h1 id="logo">Clinical Documentation App</h1>
+        </section>
+        <nav id="header_menu">
+          <ul>
+            <li><%= link_to t(:home), '#' %></li>
+            <li><%= link_to t(:help), '#' %></li>
+            <li><%= link_to t(:sign_in), '#' %></li>
+          </ul>
+        </nav>
+      </header>
+      <br id="clear_both"/>
+      <section id="main">
+        <header id="messages">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <% end %>
+        </header>
+        <aside id="application_menu">
+          Hier kommt die Menü-Spalte
+        </aside>
+        <div id="main-content">
+        <%= content_tag :h1, yield(:title) if show_title? %>
+        <%= yield %>
+        </div>
+      </section>
+      <footer>
+        <nav class="app_footer">
+          <ul>
+            <li><%= link_to t(:about), '#' %></li>
+          </ul>
+        </nav>
+      </footer>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
 </html>
